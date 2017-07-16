@@ -1,0 +1,195 @@
+﻿@model AppBroker.Models.BrokerViewModels
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<br />
+@using (Html.BeginForm("CreateBroker", "Broker"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Register New Broker</div>
+        <div class="panel-body">
+            <div class="form-horizontal">
+               
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-4">
+                            <h4>General Info</h4>
+                            <hr />
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.Name, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Name" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.MiddleName, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Middle Name" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.MiddleName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.LastName, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Last Name" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.LastName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.NickName, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Nick Name" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.NickName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.DOB, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Date of birth" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.DOB, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.Relationship, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Relationship" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.Relationship, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    @Html.TextBoxFor(model => model.BrokerInfo.Nationality, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Nationality" })
+                                    @Html.ValidationMessageFor(model => model.BrokerInfo.Nationality, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <h4>Contact Info</h4>
+                            <hr />
+
+                            <div class="col-lg-12">
+                                <div class="col-lg-6">
+
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.AdressType, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Type Of Address" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.AdressType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.Adress, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Adress" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.Adress, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.City, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "City" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.City, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.State, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "State" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.State, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.County, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "County" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.County, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.ZipCode, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Zip Code" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.ZipCode, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.Population, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Population" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.Population, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.Country, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Country" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.Country, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.PhoneType, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Type Of Phone Reference" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.PhoneType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.PhonePriority, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Priority" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.PhonePriority, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            @Html.TextBoxFor(model => model.BrokerInfo.PhoneCountry, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Country Phone" })
+                                            @Html.ValidationMessageFor(model => model.BrokerInfo.PhoneCountry, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                @Html.TextBoxFor(model => model.BrokerInfo.PhoneNumber, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Phone Number" })
+                                                @Html.ValidationMessageFor(model => model.BrokerInfo.PhoneNumber, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                @Html.TextBoxFor(model => model.BrokerInfo.EmailType, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Email Type Reference" })
+                                                @Html.ValidationMessageFor(model => model.BrokerInfo.EmailType, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                @Html.TextBoxFor(model => model.BrokerInfo.EmailPriority, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Priority" })
+                                                @Html.ValidationMessageFor(model => model.BrokerInfo.EmailPriority, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12">
+                                                @Html.TextBoxFor(model => model.BrokerInfo.Emailadress, htmlAttributes: new { @class = "mb-lg form-control input-md", type = "text", name = "article-title", placeholder = "Email Address" })
+                                                @Html.ValidationMessageFor(model => model.BrokerInfo.Emailadress, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-info" style="float: right;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
